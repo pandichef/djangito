@@ -80,7 +80,7 @@ The name "users" is commonly used in tutorials for a custom User model
 into the server application modifies the last_login field)
 
 ### How logging in works?
-1. [settings.LOGIN_URL is monkey patched](https://github.com/pandichef/djangito/blob/c4a52be47845793cbc0161929bc1ea4f75431768/djangito_client/patches.py#L38) 
+1. [settings.LOGIN_URL is monkey patched](https://github.com/pandichef/djangito/blob/0d1152a98d44900a58eacf78bd4403014c790601/djangito_client/patches.py#L37) 
 in [djangito_client.patches](https://github.com/pandichef/djangito/blob/master/djangito_client/patches.py) 
 to redirect to client.com/login_handler
 1. login_handler directs to server.com/o/authorize with query string parameters 
@@ -100,7 +100,7 @@ to avoid exceptions.
 1. callback_handler redirects back to the original URL, now authenticated
 
 ### How logging out works?
-1. [settings.LOGIN_REDIRECT_URL is monkey patched](https://github.com/pandichef/djangito/blob/c4a52be47845793cbc0161929bc1ea4f75431768/djangito_client/patches.py#L36) 
+1. [settings.LOGIN_REDIRECT_URL is monkey patched](https://github.com/pandichef/djangito/blob/0d1152a98d44900a58eacf78bd4403014c790601/djangito_client/patches.py#L36) 
 in [djangito_client.patches](https://github.com/pandichef/djangito/blob/master/djangito_client/patches.py) to redirect to server.com/o/logout
 1. server.com/o/logout calls logout(request)
 1. server.com/o/logout redirects to client.com
