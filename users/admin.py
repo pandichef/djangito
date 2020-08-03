@@ -9,7 +9,8 @@ from .models import Company, User
 
 class ProtectedUserAdmin(UserAdmin):  # Ref: https://realpython.com/manage-users-in-django-admin/
     def get_readonly_fields(self, request, obj=None):
-        all_fields = [field.name for field in obj._meta.get_fields()]
+        # all_fields = [field.name for field in obj._meta.get_fields()]
+        all_fields = [field.name for field in User._meta.get_fields()]  # need to commit later
         editable_fields = all_fields.copy()
 
         if request.user.is_superuser:
@@ -60,3 +61,8 @@ protected_admin_site.register(Group, ProtectedGroupAdmin)
 protected_admin_site.register(Company, CompanyAdmin)  # Note: CompanyAdmin doesn't exist in base Django
 
 # admin.site = protected_admin_site  # monkey patch default admin site
+
+admin.site = protected_admin_site
+
+# admin.site.register(User, ProtectedUserAdmin)
+# admin.site.register(Company, CompanyAdmin)
