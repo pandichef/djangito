@@ -134,7 +134,7 @@ setup(
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        "django==2.2.13",
+        "django==2.2.27",
         "django-oauth-toolkit==1.2.0",
         "pyjwt==1.7.1",
         'djangorestframework==3.11.0',
