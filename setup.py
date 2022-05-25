@@ -136,7 +136,7 @@ setup(
     install_requires=[
         "django==2.2.13",
         "django-oauth-toolkit==1.2.0",
-        "pyjwt==1.7.1",
+        "pyjwt==2.4.0",
         'djangorestframework==3.11.0',
     ],  # Optional
     # List additional groups of dependencies here (e.g. development
